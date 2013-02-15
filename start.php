@@ -4,7 +4,7 @@
  * @license: GPL v 2.
  * @author slyhne
  * @copyright Tiger-Inc I/S
- * @link www.tiger-inc.eu
+ * @link http://tiger-inc.eu
  */
 
 register_elgg_event_handler('init','system','donation_init');
@@ -18,6 +18,10 @@ function donation_init() {
 		elgg_extend_view('profile/status', 'donation/profile_donation');
 	}
 		
+	if (elgg_get_plugin_setting('sidebar_donation', 'donation') != 'no') {
+		elgg_extend_view('page/elements/sidebar', 'donation/sidebar');
+	}
+
 	// Register a page handler, so we can have nice URLs
 	register_page_handler('donation','donation_page_handler');
 
