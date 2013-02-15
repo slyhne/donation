@@ -5,6 +5,18 @@
 
 
 	echo "<br /><hr>";
+	echo elgg_echo('donation:sidebar_donation');
+	echo elgg_view('input/dropdown', array(
+                        'name' => 'params[sidebar_donation]',
+                        'value' => $vars['entity']->sidebar_donation,
+                        'options_values' => array(
+                                'yes' => elgg_echo('option:yes'),
+                                'no' => elgg_echo('option:no'),
+                        	),
+                	));
+
+	echo "<br /><br />";
+
 	echo elgg_echo('donation:profile_show');
 	echo elgg_view('input/dropdown', array(
                         'name' => 'params[profile_show]',
@@ -12,13 +24,11 @@
                         'options_values' => array(
                                 'small' => elgg_echo('donation:small'),
                                 'tiny' => elgg_echo('donation:tiny'),
-                        ),
-                ));
-	?>
+                        	),
+                	));
 
-<br /><br />
+	echo "<br /><br />";
 
-	<?php
 	echo elgg_echo('donation:useriver');
 	echo elgg_view('input/dropdown', array(
                         'name' => 'params[useriver]',
@@ -26,13 +36,11 @@
                         'options_values' => array(
                                 'yes' => elgg_echo('option:yes'),
                                 'no' => elgg_echo('option:no'),
-                        ),
-                ));
-	?>
+                	        ),
+                	));
 
-<br /><br />
+	echo "<br /><br />";
 
-	<?php
 	echo elgg_echo('donation:profile_donation');
 	echo elgg_view('input/dropdown', array(
                         'name' => 'params[profile_donation]',
@@ -42,11 +50,9 @@
                                 'no' => elgg_echo('option:no'),
                         ),
                 ));
-	?>
 
-<br /><br />
+	echo "<br /><br />";
 
-	<?php
 	echo elgg_echo('donation:num_display');
 	echo elgg_view('input/dropdown', array(
                         'name' => 'params[num_display]',
@@ -61,10 +67,9 @@
                                 '32' => '32',
                         ),
                 ));
-	?>
-<br /><br />
 
-	<?php
+	echo "<br /><br />";
+
 	echo elgg_echo('donation:expires');
 	echo elgg_view('input/dropdown', array(
                         'name' => 'params[expires]',
@@ -78,19 +83,14 @@
                                 '24' => '24',
                         ),
                 ));
-	?>
 
-<br /><hr><br />
+	echo "<br /><br />";
 
-	<?php
 	echo elgg_echo('donation:paypal_code');
 	echo elgg_view('input/plaintext', array('name'=>'params[paypal_code]', 'value'=>$paypal_code));
-	?>
 
-<br /><br />
+	echo "<br /><br />";
 
-	<?php
 	echo elgg_echo('donation:bank_account');
 	echo elgg_view('input/text', array('name'=>'params[bank_account]', 'value'=>$bank_account));
-
 
