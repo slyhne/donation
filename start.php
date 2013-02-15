@@ -11,7 +11,7 @@ register_elgg_event_handler('init','system','donation_init');
 
 function donation_init() {
 
-  elgg_extend_view('css/elgg','donation/css');
+	elgg_extend_view('css/elgg','donation/css');
 
 	// Show donation status on profile
 	if (elgg_get_plugin_setting('profile_donation', 'donation') == 'yes' && elgg_in_context('profile')) {
