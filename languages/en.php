@@ -29,6 +29,7 @@
 	'donation:bank_account' => "Optional: A bank account number for bank transfers:",
 	'donation:bank_account:text' => "Transfer to account:<br><b>%s</b><br>please state your username on the transfer.",
 	'donation:num_display' => 'Number of donators to display:',
+	'donation:sidebar_donation' => 'Show donation in sidebar:',
 	'donation:profile_show' => 'Show donators as:',
 	'donation:text' => 'Show names',
 	'donation:small' => 'Small icons',
