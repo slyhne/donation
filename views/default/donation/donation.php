@@ -3,9 +3,9 @@
 /**
  * Elgg Donation plugin
  * @license: GPL v 2.
- * @author Tiger
- * @copyright TechIsUs
- * @link www.techisus.dk
+ * @author slyhne/ura soul
+ * @copyright Tiger Inc I/S
+ * @link http://tiger-inc.eu
  */
 
 // Get plugin settings
@@ -30,10 +30,7 @@ $query =  array(
 		'order_by_metadata' => $order);
 
 $newest_donators = elgg_get_entities_from_metadata($query);
-?>
 
-<div class="donationWrapper">
-<?php
 echo "<center>" . elgg_echo('donation:desc', array(elgg_get_config('sitename'))) . "<br><br>";
 if($paypal_code){
 	echo elgg_echo('donation:paypal');
@@ -67,11 +64,13 @@ if (!$newest_donators) {
 	echo "</ul>";
 }
 echo '</div>';
-?>
-<div class="clearfloat"></div>
-<?php if (elgg_is_logged_in()) { ?>
-<div class="donation-more">
-<a href="<?php echo $CONFIG->site->url; ?>donation"><?php echo elgg_echo('donation:show:everyone'); ?></a>
-</div>
-<?php } ?>
-</div>
+
+echo "<div class='clearfloat'></div>";
+if (elgg_is_logged_in()) {
+	echo "<div>";
+	echo elgg_view('output/url', array(
+			'href' => elgg_get_site_url() . 'donation',
+			'text' => elgg_echo('donation:show:everyone'),
+			));
+	echo "</div>";
+}
