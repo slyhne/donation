@@ -2,7 +2,8 @@
 
 	$paypal_code = $vars['entity']->paypal_code;
 	$bank_account = $vars['entity']->bank_account;
-
+	$bitcoin_code = $vars['entity']->bitcoin_code;
+	$bitcoin_label = $vars['entity']->bitcoin_label;
 
 	echo "<br /><hr>";
 	echo elgg_echo('donation:sidebar_donation');
@@ -91,6 +92,14 @@
 
 	echo "<br /><br />";
 
+	echo elgg_echo('donation:bitcoin_code');
+	echo elgg_view('input/text', array('name'=>'params[bitcoin_code]', 'value'=>$bitcoin_code));
+	echo "<br /><br />";
+	echo elgg_echo('donation:bitcoin_label');
+	echo elgg_view('input/text', array('name'=>'params[bitcoin_label]', 'value'=>$bitcoin_label));
+	echo "<br /><br />";
 	echo elgg_echo('donation:bank_account');
 	echo elgg_view('input/text', array('name'=>'params[bank_account]', 'value'=>$bank_account));
+
+	echo "<br /><br />";
 

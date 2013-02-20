@@ -6,8 +6,8 @@ Donation plugin for Elgg
 What it does:
 
 Gives you a donation widget for your Elgg site.
-Handles Paypal, bitcoins or bank tranfers (just the account number)
-Context menu on any user icon (or on their profile) to mark them as a donator
+Handles Paypal and/or bank tranfers (just the account number)
+Right click on any user icon (or on their profile) to mark them as a donator
 A page where all donators to your site shows
 Optional: Put a label on profiles to show who has donated
 Optional: Announce donations to the River
@@ -27,17 +27,16 @@ Installation:
 
 Setup:
 
-The donation module will show up in sidebar on alle pages with a sidebar. In settings you can
-disable this and manually set it to show in specific pages. See example below:
+To get this plugin to show in the sidebar of a page you have point to it. See example below:
 
-$sidebar = elgg_view("donation/sidebar");
+  $sidebar = elgg_view("donation/sidebar");
 
-$params = array(
+	$params = array(
 		'content' => $content,
 		'title' => $title,
 		'sidebar' => $sidebar,
-);
-$body = elgg_view_layout('one_sidebar', $params);
+	);
+	$body = elgg_view_layout('one_sidebar', $params);
 
 
 
@@ -47,9 +46,7 @@ In "Tool Administration" setup how you want it:
 * Announce donations to River: Yes/No
 * Show donation status on profil: Yes/No (Covers profile and user list, see screenshots)
 * Number of donators to display: 4/6/8/12/24/36 (How many donators should the frontpage widget show)
-* Show in sidebar: Yes/No
-* Optional: Insert Paypal code here: Paste your Paypal code here (If not, everything refering to Paypal will not be shown)
-* Optional: Setup bitcoin: (If not, everything refering to bitcoin transfer will not be shown)
+* Insert Paypal code here: Paste your Paypal code here (If not, everything refering to Paypal will not be shown)
 * Optional: A bank account number for bank tranfers: (If not, everything refering to Bank transfer will not be shown)
 
 That's it.

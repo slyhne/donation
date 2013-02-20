@@ -45,7 +45,9 @@ function donation_page_handler($page) {
 
 	$content = elgg_view('donation/everyone');
 
-	$sidebar = elgg_view("donation/sidebar");
+	if (elgg_get_plugin_setting('sidebar_donation', 'donation') != 'yes') {
+		$sidebar = elgg_view("donation/sidebar");
+	}
 
 	$params = array(
 		'content' => $content,

@@ -14,6 +14,8 @@ if(!$profile_show) $profile_show = "small";
 $num_display = elgg_get_plugin_setting("num_display","donation");
 if(!$num_display) $num_display = "8";
 $paypal_code = elgg_get_plugin_setting("paypal_code","donation");
+$bitcoin_code = elgg_get_plugin_setting("bitcoin_code","donation");
+$bitcoin_label = elgg_get_plugin_setting("bitcoin_label","donation");
 $bank_account = elgg_get_plugin_setting("bank_account","donation");
 
 // Current time
@@ -32,10 +34,17 @@ $newest_donators = elgg_get_entities_from_metadata($query);
 
 <div class="donationWrapper">
 <?php
-echo "<center>" . elgg_echo('donation:desc', array(elgg_get_config('sitename'))) . "<br>";
+echo "<center>" . elgg_echo('donation:desc', array(elgg_get_config('sitename'))) . "<br><br>";
 if($paypal_code){
 	echo elgg_echo('donation:paypal');
-	echo $paypal_code;
+	echo '<div class="elgg-paypal-button">' . $paypal_code . '</div>';
+}
+if($bitcoin_code){
+	echo elgg_echo('donation:bitcoin');
+	echo '<br>';
+	echo '<div class="elgg-bitcoin-button"><a href="bitcoin:' . $bitcoin_code . '?label=' . $bitcoin_label . '"><img src="'. $CONFIG->site->url . 'mod/donation/graphics/BC_Rnd_32px.png" alt="we accept bitcoin donations"/></a>';
+	echo '<br/><a href="bitcoin:' . $bitcoin_code . '?label=' . $bitcoin_label . '">' . $bitcoin_code . '</a></div>';
+	echo '<br>';
 }
 if($bank_account){
 	echo elgg_echo('donation:banktransfer');
@@ -44,7 +53,7 @@ if($bank_account){
 
 echo "<hr>";
 echo elgg_echo('donation:latest');
-echo "<br></center>";
+echo '<br></center><div class="elgg-donator-list">';
 
 if (!$newest_donators) {
 	echo elgg_echo('donation:none');
@@ -55,8 +64,14 @@ if (!$newest_donators) {
 		echo elgg_view_entity_icon($donator, $profile_show, array('hover' => false));
 		echo "</li>";
 	}
+	echo "</ul>";
 }
+echo '</div>';
 ?>
 <div class="clearfloat"></div>
+<?php if (elgg_is_logged_in()) { ?>
+<div class="donation-more">
 <a href="<?php echo $CONFIG->site->url; ?>donation"><?php echo elgg_echo('donation:show:everyone'); ?></a>
+</div>
+<?php } ?>
 </div>

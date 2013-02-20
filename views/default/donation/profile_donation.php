@@ -14,8 +14,8 @@ if($vars['entity']->donation > time()) {
 					'title' => elgg_echo('donation:show:everyone'),
 					'href' => 'donation',
 					));
-	echo "<div class=\"profile_donation\">";
+	echo "<div class=\"even\"><div class=\"profile_donation\">";
 	echo $link;
-	echo "</div>";
+	echo "</div></div>";
 }
 
