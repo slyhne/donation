@@ -7,7 +7,7 @@
  * @link http://tiger-inc.eu
  */
 
-register_elgg_event_handler('init','system','donation_init');
+elgg_register_event_handler('init','system','donation_init');
 
 function donation_init() {
 
@@ -18,12 +18,22 @@ function donation_init() {
 		elgg_extend_view('profile/status', 'donation/profile_donation');
 	}
 		
-	if (elgg_get_plugin_setting('sidebar_donation', 'donation') != 'no') {
+	// Show donation module in sidebar
+	if (elgg_get_plugin_setting('sidebar_donation', 'donation') == 'yes') {
 		elgg_extend_view('page/elements/sidebar', 'donation/sidebar');
 	}
 
+	// add a donation widget
+	elgg_register_widget_type(
+			'donation',
+			elgg_echo('donation'),
+			elgg_echo('donation:widget:description'),
+			array('dashboard'),
+			false
+	);
+
 	// Register a page handler, so we can have nice URLs
-	register_page_handler('donation','donation_page_handler');
+	elgg_register_page_handler('donation','donation_page_handler');
 
 	if (elgg_is_admin_logged_in()) {
 
@@ -63,7 +73,12 @@ function donation_page_handler($page) {
 // Donations are announced to the river
 function donation_add_to_river($user, $type) {
 	if (elgg_get_plugin_setting('useriver', 'donation') == 'yes') {
-		add_to_river('river/donation/donation',$type, $user->guid, $user->guid);
+		elgg_create_river_item(array(
+				'view' => 'river/donation/donation',
+				'action_type' => $type,
+				'subject_guid' => $user->guid,
+				'object_guid' => $user->guid,
+				));
 	}
 }
 
