@@ -3,11 +3,11 @@
  * Elgg Donation plugin
  * @license: GPL v 2.
  * @author Tiger
- * @copyright TechIsUs
- * @link www.techisus.dk
+ * @copyright Tiger-Inc I/S
+ * @link http://tiger-inc.eu
  */
 
-	$english = array(
+return array(
 	
 	'donation' => "Donations",
 	'donation:title' => 'Help %s',
@@ -25,6 +25,9 @@
 	'donation:removed' => 'The selected user is removed from the donator list',
 	'donation:none' => 'No donators to display',
 
+	// Widget
+	'donation:widget:description' => 'Shows a donation widget with lates donators!',
+
 	// Plugin settings
 	'donation:paypal_code' => "Optional: Insert Paypal code here:",
 	'donation:bitcoin_code' => "Optional: Insert Bitcoin code here (<i>bitcoin:</i> and <i>?label</i> codes will be added for links by this plugin.):",
@@ -32,7 +35,7 @@
 	'donation:bank_account' => "Optional: A bank account number for bank transfers:",
 	'donation:bank_account:text' => "Transfer to account:<br><b>%s</b><br>please state your username on the transfer.",
 	'donation:num_display' => 'Number of donators to display:',
-	'donation:sidebar_donation' => 'Show donation in sidebar:',
+	'donation:sidebar_donation' => 'Show donation module in sidebar on pages without an owner:',
 	'donation:profile_show' => 'Show donators as:',
 	'donation:text' => 'Show names',
 	'donation:small' => 'Small icons',
@@ -46,7 +49,4 @@
 
 	// River
 	'river:donation:user:default' => '%s have donated to this website. Thank you...',
-	);
-					
-	add_translation("en",$english);
-?>
+);
