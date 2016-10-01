@@ -2,9 +2,9 @@
 /**
  * Elgg Donation plugin
  * @license: GPL v 2.
- * @author slyhne
- * @copyright Zurf.dk
- * @link zurf.dk/elgg
+ * @author slyhne/ura soul
+ * @copyright Tiger Inc I/S
+ * @link http://tiger-inc.eu
  */
 
 
