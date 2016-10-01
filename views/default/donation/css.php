@@ -1,12 +1,12 @@
 <?php
 
-	/**
-	 * Elgg Donation plugin
-	 * @license: GPL v 2.
-	 * @author Tiger
-	 * @copyright TechIsUs
-	 * @link www.techisus.dk
-	 */
+/**
+ * Elgg Donation plugin
+ * @license: GPL v 2.
+ * @author Tiger
+ * @copyright Tiger-Inc I/S
+ * @link http://tiger-inc.eu
+ */
  
 ?>
 .elgg-donator-list{
@@ -55,7 +55,7 @@
 	line-height:1.3em;
 	min-height:17px;
 	margin:2px;
-	background: url(<?php echo $vars['url']; ?>mod/donation/graphics/icon_donation.png) no-repeat left 0px;
+	background: url(<?php echo elgg_get_site_url(); ?>mod/donation/graphics/icon_donation.png) no-repeat left 0px;
 }
 .list_donation {
 	float:right;
@@ -63,7 +63,7 @@
 	line-height:1.3em;
 	min-height:17px;
 	margin-top: -20px;
-	background: url(<?php echo $vars['url']; ?>mod/donation/graphics/icon_donation.png) no-repeat left -1px;
+	background: url(<?php echo elgg_get_site_url(); ?>mod/donation/graphics/icon_donation.png) no-repeat left -1px;
 }
 /* ***************************************
 	ALL DONATORS
@@ -83,5 +83,3 @@
 	width:100px;
 	height:100px;
 }
-
-
