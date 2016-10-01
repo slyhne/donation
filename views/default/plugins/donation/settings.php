@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * Elgg Donation plugin
+ * @license: GPL v 2.
+ * @author slyhne/ura soul
+ * @copyright Tiger Inc I/S
+ * @link http://tiger-inc.eu
+ */
 	$paypal_code = $vars['entity']->paypal_code;
 	$bank_account = $vars['entity']->bank_account;
 	$bitcoin_code = $vars['entity']->bitcoin_code;
@@ -102,4 +108,3 @@
 	echo elgg_view('input/text', array('name'=>'params[bank_account]', 'value'=>$bank_account));
 
 	echo "<br /><br />";
-
