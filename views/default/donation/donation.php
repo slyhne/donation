@@ -39,7 +39,7 @@ if($paypal_code){
 if($bitcoin_code){
 	echo elgg_echo('donation:bitcoin');
 	echo '<br>';
-	echo '<div class="elgg-bitcoin-button"><a href="bitcoin:' . $bitcoin_code . '?label=' . $bitcoin_label . '"><img src="'. $CONFIG->site->url . 'mod/donation/graphics/BC_Rnd_32px.png" alt="we accept bitcoin donations"/></a>';
+	echo '<div class="elgg-bitcoin-button"><a href="bitcoin:' . $bitcoin_code . '?label=' . $bitcoin_label . '"><img src="'. elgg_get_site_url() . 'mod/donation/graphics/BC_Rnd_32px.png" alt="we accept bitcoin donations"/></a>';
 	echo '<br/><a href="bitcoin:' . $bitcoin_code . '?label=' . $bitcoin_label . '">' . $bitcoin_code . '</a></div>';
 	echo '<br>';
 }
