@@ -2,9 +2,9 @@
 /**
  * Elgg Donation plugin
  * @license: GPL v 2.
- * @author Tiger
- * @copyright TechIsUs
- * @link www.techisus.dk
+ * @author slyhne/ura soul
+ * @copyright Tiger Inc I/S
+ * @link http://tiger-inc.eu
  */
 
 if($vars['entity']->donation > time()) {
